@@ -52,6 +52,7 @@ class Worker:
 def gen_input():
     from random import randint
     from random import choice
+    # возможны кейсы с несвязанными графами нужно доработать
     n = [i for i in range(1, randint(5, 10) + 1)]  # [1,2,3,4,5,6,7,8,9]
     arr = []
     n.remove(1)
@@ -105,6 +106,7 @@ def run_all():
     takt = 0
     # в список прозвонивших добавляем первого
     called = [Worker.get(1)]
+    # инициализируем список связей под каждым узлом
     Worker.get(1).count_of_relation()
     # цикл пока всех не обзвонили
     while (not Worker.is_all_called()):
