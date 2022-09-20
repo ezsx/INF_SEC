@@ -36,9 +36,10 @@ def main_alg(p_r, p_r2, N):
     count = 0
 
     # инициализируем список для хранения всех возможных гипер перестановочных строк
-    all_possible_hyper_str = [p_r+p_r2]+[p_r2+p_r]
+    all_possible_hyper_str = [p_r+p_r2]+[p_r2+p_r]+all_almost_permut_str(p_r+p_r2)+all_almost_permut_str(p_r2+p_r)
     print(all_possible_hyper_str)
 
+    all_res = []
 
     for i in all_possible_hyper_str:
         # создаем для потенциальной гипер перестановочной строки все подстроки длины N+1
@@ -59,9 +60,14 @@ def main_alg(p_r, p_r2, N):
             check = True
 
         if check:
-            print(f"искомая кратчайшая гипер почти перестановочная строка: {i}")
-            break
+            print("check true")
+            all_res.append(i)
+        else:
+            print("check false")
         count += 1
+    print(all_res)
+    print(f"искомая кратчайшая гипер почти перестановочная строка: {min(all_res, key=len)}")
+
 
 
 if __name__ == '__main__':
