@@ -71,11 +71,16 @@ def main_alg(p_r, p_r2, N):
 
 
 if __name__ == '__main__':
+
+    import time
+    start_time = time.time()
     alphabet = "abcdefghijklmnopqrstuvwxyz".upper()
     p_r = ['A', 'B', 'C']
     p_r2 = ['A', 'C', 'B']
     N = 3
     # p_r, p_r2, N = random_input()
     main_alg(p_r, p_r2, N)
+    print("--- %s seconds ---" % (time.time() - start_time))
+    print(all_almost_permut_str(p_r), len(all_almost_permut_str(p_r)))
 
 # просто полнейший бред собаки, что это вообще за условие кому это вообще нужно
