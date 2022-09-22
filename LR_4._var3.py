@@ -29,12 +29,18 @@ class Network_member():
 
 
 if __name__ == '__main__':
-    test_input = [
+    test_input1 = [
         [1, (1, 2, 3)],
         [2, (1, 4, 5)],
         [3, (1, 2, 4)]
     ]
-    for i in test_input:
+    test_input2 = [
+        [1, (100, 100, 100)],
+        [2, (100, 100, 100)],
+        [3, (100, 99, 99)],
+        [4, (99, 99, 100)],
+    ]
+    for i in test_input2:
         Network_member(i[0], i[1])
     Network_member.generate_compatibility()
     count = 0
