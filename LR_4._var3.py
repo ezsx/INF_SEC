@@ -40,7 +40,7 @@ if __name__ == '__main__':
         [3, (100, 99, 99)],
         [4, (99, 99, 100)],
     ]
-    for i in test_input2:
+    for i in test_input1:
         Network_member(i[0], i[1])
     Network_member.generate_compatibility()
     count = 0
